@@ -13,16 +13,25 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
     <script type="text/babel">
-      function Profile({name, job}) {
+      function Profile({ name }) {
+  return <h2>{name}</h2>
+}
+
+function App() {
+  const [name, setName] = React.useState("Ali")
+
   return (
-    <div>
-      <h2>{name}</h2>
-      <p>{job}</p>
-    </div>
+    <>
+      <Profile name={name} />
+      <button onClick={() => setName("Fatou")}>
+        Changer le nom
+      </button>
+    </>
   )
 }
+
 const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<Profile name="Ali" job="Développeur" />)
+root.render(<App />)
     </script>
 </body>
 </html>
