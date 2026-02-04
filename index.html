@@ -13,24 +13,23 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
     <script type="text/babel">
-      function Profile({ name }) {
-  return <h2>{name}</h2>
-}
-
-function App() {
-  const [name, setName] = React.useState("Ali")
-
+      function Box({ children }) {
   return (
-    <>
-      <Profile name={name} />
-      <button onClick={() => setName("Fatou")}>
-        Changer le nom
-      </button>
-    </>
+    <div style={{ border: "2px solid black", padding: "10px" }}>
+      {children}
+    </div>
   )
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
+function App() {
+  return (
+    <Box>
+      <p>Hello</p>
+      <button>OK</button>
+    </Box>
+  )
+}
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<App />)
     </script>
 </body>
