@@ -13,29 +13,22 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
     <script type="text/babel">
-      function Title({ children }) {
-  return <h1>{children}</h1>
-}
+      function App() {
+  console.log("render")
 
-function Text({ children }) {
-  return <p>{children}</p>
-}
+  const [count, setCount] = React.useState(0)
 
-function Button({ children }) {
-  return <button>{children}</button>
-}
-
-function Page() {
   return (
     <div>
-      <Title>Titre</Title>
-      <Text>Texte</Text>
-      <Button>OK</Button>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>
+        +
+      </button>
     </div>
   )
 }
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<Page />)
+root.render(<App />)
     </script>
 </body>
 </html>
