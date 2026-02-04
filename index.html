@@ -13,18 +13,22 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
     <script type="text/babel">
-      function App() {
-  console.log("render")
+    function Display({ count }) {
+  return <p>Count : {count}</p>
+}
 
+function Controls({ onInc }) {
+  return <button onClick={onInc}>+</button>
+}
+
+function App() {
   const [count, setCount] = React.useState(0)
 
   return (
-    <div>
-      <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>
-        +
-      </button>
-    </div>
+    <>
+      <Display count={count} />
+      <Controls onInc={() => setCount(c => c + 1)} />
+    </>
   )
 }
 const root = ReactDOM.createRoot(document.getElementById('root'))
