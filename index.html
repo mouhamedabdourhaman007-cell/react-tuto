@@ -13,16 +13,16 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
     <script type="text/babel">
-      function Profile() {
+      function Profile({name, job}) {
   return (
     <div>
-      <h2>Ali</h2>
-      <p>Développeur</p>
+      <h2>{name}</h2>
+      <p>{job}</p>
     </div>
   )
 }
 const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<Profile />)
+root.render(<Profile name="Ali" job="Développeur" />)
     </script>
 </body>
 </html>
