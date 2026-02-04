@@ -13,25 +13,29 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
     <script type="text/babel">
-      function Layout({ header, content }) {
+      function Title({ children }) {
+  return <h1>{children}</h1>
+}
+
+function Text({ children }) {
+  return <p>{children}</p>
+}
+
+function Button({ children }) {
+  return <button>{children}</button>
+}
+
+function Page() {
   return (
     <div>
-      <div>{header}</div>
-      <div>{content}</div>
+      <Title>Titre</Title>
+      <Text>Texte</Text>
+      <Button>OK</Button>
     </div>
   )
 }
-
-function App() {
-  return (
-    <Layout
-      header={<h1>Titre</h1>}
-      content={<p>Contenu</p>}
-    />
-  )
-}
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<App />)
+root.render(<Page />)
     </script>
 </body>
 </html>
